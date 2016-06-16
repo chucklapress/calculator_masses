@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from calcapp.views import index_view
+
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$')
+    url(r'^$', index_view)
 ]
