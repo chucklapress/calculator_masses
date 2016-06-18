@@ -51,7 +51,7 @@ def app_view(request):
             'total': value
         }
         print(request.POST)
-        return render(request, app_view, context)
+        return render(request,'app_view.html', context)
 
     print(request.POST)
     return render(request, 'app_view.html')
