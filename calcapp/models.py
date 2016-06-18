@@ -11,4 +11,3 @@ class SavedCalc(models.Model):
 
 class SaveUser(models.Model):
     saveuser = models.ForeignKey(SavedCalc)
-    
