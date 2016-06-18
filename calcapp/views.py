@@ -34,5 +34,21 @@ def home_view(request):
 
 
 def app_view(request):
-    return render(request, 'app_view.html')
+    if request.POST:
+        left = request.POST['left']
+        right = request.POST['right']
+        mathop = request.POST['operators']
+        if mathop == 'add':
+            value = int(left) + int(right)
+        if mathop == 'subtract':
+            value = int(left) - int(right)
+        if mathop == 'multiply':
+            value = int(left) * int(right)
+        if mathop == 'divide':
+            value = int(left) / int(right)
+
+        context = {
+            'total': value
+        }
+    return render(request, 'app_view.html', context)
 
