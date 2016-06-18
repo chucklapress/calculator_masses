@@ -4,7 +4,7 @@ from django.db import models
 
 class SavedCalc(models.Model):
     left = models.IntegerField()
-    operator = models.CharField(max_length=15)
+    operators = models.CharField(max_length=15)
     right = models.IntegerField()
     total = models.FloatField()
     loguser = models.CharField(max_length=25)

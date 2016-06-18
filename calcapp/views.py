@@ -5,11 +5,10 @@ from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 
-
-# Create your views here.
+ #Create your views here.
 
 # def index_view(request):
-#    form = AuthenticationForm()
+#     form = AuthenticationForm()
 #    return render(request,"index.html", {"form": form})
 
 def user_create_view(request):
