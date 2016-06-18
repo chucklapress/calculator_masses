@@ -9,12 +9,14 @@
     <link rel = "stylesheet" href ={% static "app/css/bootstrap.css"%}>
 </head>
 <body>
-    <a href="{% url 'index_view' %}">Go Back Home</a>
-    <a href="{% url 'user_create_view'%}">Create as User</a>
+    <a href="{% url 'index_view' %}">Return Home</a>
+    <a href="{% url 'user_create_view'%}">Create User</a>
     {%  if request.user.is_authenticated %}
     <a href="{%url 'logout_view' %}">Logout!</a>
+    <a href="{%url 'profile_view' %}">Profile</a>
     {% endif %}
-    
+    <a href="{% url 'app_view' %}">Calculator</a>
+
 
 {% block content %}
 {% endblock %}

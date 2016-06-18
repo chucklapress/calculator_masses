@@ -17,8 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 
-from calcapp import views
-from calcapp.views import home_view, app_view
+
+from calcapp.views import home_view, app_view, user_create_view, profile_view
 
 
 
@@ -29,9 +29,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', login, name='index_view'),
     url(r'^logout/$', logout, name="logout_view"),
-    url(r'^user_create/$', views.user_create_view, name='user_create_view'),
+    url(r'^user_create/$', user_create_view, name='user_create_view'),
     url(r'^home/$', home_view),
-    url(r'^app/$', app_view),
+    url(r'^app/$', app_view, name='app_view'),
+    url(r'^accounts/profile/$',profile_view, name="profile_view")
 
 
 
