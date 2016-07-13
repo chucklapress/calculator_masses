@@ -8,5 +8,5 @@ class SavedCalc(models.Model):
     right = models.IntegerField()
     total = models.FloatField()
     loguser = models.ForeignKey('auth.User')
-
-
+    def __str__(self):
+        return self.loguser.username

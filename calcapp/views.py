@@ -20,7 +20,7 @@ def user_create_view(request):
         else:
             return render(request, "user_create_view.html", {"form": form})
     form = UserCreationForm()
-    return render(request, "user_create_view.html", {"form" : form})
+    return render(request, "user_create_view.html", {"form": form})
 
 @login_required
 def profile_view(request):
