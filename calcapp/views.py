@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-
+from calcapp.models import SavedCalc
 
  #Create your views here.
 
@@ -24,8 +24,8 @@ def user_create_view(request):
 
 @login_required
 def profile_view(request):
-    print(request.user)
-    return render(request, 'profiles.html')
+    save_calc = SavedCalc.objects.filter.loguser=self.request.user
+    return render(request, 'profiles.html', {"save_calc":save_calc})
 
 
 def home_view(request):
@@ -45,7 +45,7 @@ def app_view(request):
             value = int(left) * int(right)
         if mathop == 'divide':
             value = int(left) / int(right)
-
+        SavedCalc.objects.create(left=left ,operators=mathop ,right=right ,loguser=request.user, total=value)
         context = {
             'total': value
         }
@@ -54,6 +54,3 @@ def app_view(request):
 
     print(request.POST)
     return render(request, 'app_view.html')
-
-
-
