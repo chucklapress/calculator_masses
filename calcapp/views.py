@@ -22,9 +22,9 @@ def user_create_view(request):
     form = UserCreationForm()
     return render(request, "user_create_view.html", {"form": form})
 
-@login_required
+
 def profile_view(request):
-    save_calc = SavedCalc.objects.filter.loguser=self.request.user
+    save_calc = SavedCalc.objects.filter(loguser=request.user)
     return render(request, 'profiles.html', {"save_calc":save_calc})
 
 

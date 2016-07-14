@@ -2,6 +2,21 @@
 
 {% block content %}
 
+<br>
+<br>
+<br>
+<h4>Saved calculations</h4>
+<br>
+<br>
+<br>
+<br>
+{% for item in save_calc %}
+
+<p>{{ item.left }}</p>
+<p>{{ item.operators }}</p>
+<p>{{item.right }}</p>
+<p>{{item.total}}
+{% endfor %}
 
 
 
