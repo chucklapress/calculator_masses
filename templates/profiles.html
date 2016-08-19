@@ -11,11 +11,12 @@
 <br>
 <br>
 {% for item in save_calc %}
-
-<p>{{ item.left }}</p>
-<p>{{ item.operators }}</p>
-<p>{{item.right }}</p>
-<p>{{item.total}}
+<p>********************</p>
+<p>Number: {{ item.left }}</p>
+<p>Operator:{{ item.operators }}</p>
+<p>Number:{{item.right }}</p>
+<p>_____________________</p>
+<p>Sum Total:{{item.total}}
 {% endfor %}
 
 
