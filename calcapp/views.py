@@ -7,9 +7,9 @@ from calcapp.models import SavedCalc
 
  #Create your views here.
 
-# def index_view(request):
-#     form = AuthenticationForm()
-#    return render(request,"index.html", {"form": form})
+#def index_view(request):
+   #form = AuthenticationForm()
+   #return render(request,"index.html", {"form": form})
 
 def user_create_view(request):
     if request.POST:
@@ -26,6 +26,7 @@ def user_create_view(request):
 def profile_view(request):
     save_calc = SavedCalc.objects.filter(loguser=request.user)
     return render(request, 'profiles.html', {"save_calc":save_calc})
+    
 
 
 def home_view(request):
