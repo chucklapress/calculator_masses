@@ -11,11 +11,17 @@
 <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
-            <li role="presentation" class="active"><a href="{% url 'user_create_view' %}">Create user</a></li>
-            <li role="presentation" class="active"><a href="{%url 'logout_view'%}?next=/">Logout</a></li>
-            <li role="presentation" class="active"><a href="{%url 'profile_view'%}">Profile</a></li>
-            <li role="presentation" class="active"><a href="{% url 'app_view'%}">Use the Calculator</a></li>
+          {% if user.is_authenticated %}
+          <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+          <li role="presentation" class="active"><a href="{%url 'logout_view'%}?next=/">Logout</a></li>
+          <li role="presentation" class="active"><a href="{%url 'profile_view'%}">Profile</a></li>
+          <li role="presentation" class="active"><a href="{% url 'app_view'%}">Use the Calculator</a></li>
+
+          {% else %}
+          <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+          <li role="presentation" class="active"><a href="{% url 'user_create_view' %}">Create user</a></li>
+
+          {%endif%}
       </div>
 </nav>
 </head>

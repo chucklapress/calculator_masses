@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from calcapp.models import SavedCalc
+from django.contrib.auth import get_user
 
  #Create your views here.
 
@@ -26,7 +27,7 @@ def user_create_view(request):
 def profile_view(request):
     save_calc = SavedCalc.objects.filter(loguser=request.user)
     return render(request, 'profiles.html', {"save_calc":save_calc})
-    
+
 
 def home_view(request):
     return render(request, 'home.html')
