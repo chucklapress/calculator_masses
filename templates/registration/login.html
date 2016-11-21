@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 
 {% block content %}
-    <br>
-    <br>
-    <h3>Welcome to the Login Page!</h3>
-    <br>
-    <br>
-    <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Log Me In">
-    </form>
+<br>
+<IMG SRC="{% static 'calcapp/images/calc1.png' %}" ALT="" WIDTH=260 HEIGHT=180>
+<br>
+<br>
+<h3>Welcome to the Login Page!</h3>
+<br>
+<br>
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Log Me In">
+</form>
+<br>
+<br>
+<IMG SRC="{% static 'calcapp/images/calc2.png' %}" ALT="" WIDTH=300 HEIGHT=300>
+
 
 {%  endblock%}

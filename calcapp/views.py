@@ -28,7 +28,6 @@ def profile_view(request):
     return render(request, 'profiles.html', {"save_calc":save_calc})
     
 
-
 def home_view(request):
     return render(request, 'home.html')
 

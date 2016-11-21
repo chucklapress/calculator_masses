@@ -7,16 +7,21 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel = "stylesheet" href ={% static "calcapp/css/bootstrap.css"%}>
-</head>
+
 <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-            <a href="{% url 'index_view' %}">Home</a>
-            <a href="{% url 'user_create_view' %}">Create user</a>
-            <a href="{%url 'logout_view'%}?next=/">Logout</a>
-            <a href="{%url 'profile_view'%}">Profile</a>
-            <a href="{% url 'app_view'%}">Use the Calculator</a>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+            <li role="presentation" class="active"><a href="{% url 'user_create_view' %}">Create user</a></li>
+            <li role="presentation" class="active"><a href="{%url 'logout_view'%}?next=/">Logout</a></li>
+            <li role="presentation" class="active"><a href="{%url 'profile_view'%}">Profile</a></li>
+            <li role="presentation" class="active"><a href="{% url 'app_view'%}">Use the Calculator</a></li>
       </div>
+</nav>
+</head>
 <body>
+  <br>
+  <br>
   <div class="container">
     {% block content %}
 

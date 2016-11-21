@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-         <h2>Calculator</h2>
 <br>
-    <form action='' method="post">
-        {% csrf_token %}
-
-        <input type="number"  name='left'>
-        <select name="operators">
-            <option value="add">+</option>
-            <option value="subtract">-</option>
-            <option value="multiply">*</option>
-            <option value="divide">/</option>
-        </select>
-        <input type="number"  name='right'>
-
-        <input type="submit" value="Submit!">
-
-    </form>
-{{ total }}
+<br>
+<h2>Calculator</h2>
+<br>
+<form action='' method="post">
+{% csrf_token %}
+<input type="number"  name='left'>
+<br>
+<br>
+<select name="operators">
+<option value="add">+</option>
+<option value="subtract">-</option>
+<option value="multiply">*</option>
+<option value="divide">/</option>
+</select>
+<br>
+<br>
+<input type="number"  name='right'>
+<br>
+<br>
+<input type="submit" value="Submit!">
+</form>
+<br>
+___________________________________________________
+<br>
+<h4>Your Total: {{ total }}</h4>
 {% endblock %}
