@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^$', login, name='index_view'),
     url(r'^logout/$', logout, name="logout_view"),
     url(r'^user_create/$', user_create_view, name='user_create_view'),
-    url(r'^home/$', home_view),
+    url(r'^home/$', home_view, name='home_view'),
     url(r'^app/$', app_view, name='app_view'),
     url(r'^accounts/profile/$',profile_view, name="profile_view")
 
